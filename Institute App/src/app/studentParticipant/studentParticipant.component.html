@@ -16,7 +16,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="addParticipantModalLabel">Create participant</h4>
+          <h4 class="modal-title" id="addParticipantModalLabel">Add Student</h4>
             <p class="modal-intro">Enter the required values below.</p>
         </div>
         <form [formGroup]="myForm">
@@ -25,11 +25,27 @@
   
             
   
+            <div class="form-group text-left">
+              <label for="id">Student-ID *</label>
+              
+                <input formControlName="id" placeholder="enter student's id" type="text" class="form-control">
+              
+            </div>
+          
+        
+
+          
+            <div class="form-group text-left">
+              <label for="name">Name *</label>
+              
+                <input formControlName="name" placeholder="enter student's name" type="text" class="form-control">
+              
+            </div>
               
                 <div class="form-group text-left">
-                  <label for="fatherName">fatherName</label>
+                  <label for="fatherName">Father Name *</label>
                   
-                    <input formControlName="fatherName" type="text" class="form-control">
+                    <input formControlName="fatherName" placeholder="enter student's father name" type="text" class="form-control">
                   
                 </div>
               
@@ -37,19 +53,9 @@
   
               
                 <div class="form-group text-left">
-                  <label for="DOB">DOB</label>
+                  <label for="DOB">DOB *</label>
                   
-                    <input formControlName="DOB" type="text" class="form-control">
-                  
-                </div>
-              
-            
-  
-              
-                <div class="form-group text-left">
-                  <label for="studentSecret">studentSecret</label>
-                  
-                    <input formControlName="studentSecret" type="text" class="form-control">
+                    <input formControlName="DOB" placeholder="enter student's date of birth" type="text" class="form-control">
                   
                 </div>
               
@@ -57,19 +63,9 @@
   
               
                 <div class="form-group text-left">
-                  <label for="institute">institute</label>
+                  <label for="studentSecret">Student Secret *</label>
                   
-                      <textarea formControlName="institute" class="form-control" rows="3"></textarea>
-                  
-                </div>
-              
-            
-  
-              
-                <div class="form-group text-left">
-                  <label for="id">id</label>
-                  
-                    <input formControlName="id" type="text" class="form-control">
+                    <input formControlName="studentSecret" placeholder="choose 6-digit secret e.g. 123456" type="text" class="form-control">
                   
                 </div>
               
@@ -77,9 +73,9 @@
   
               
                 <div class="form-group text-left">
-                  <label for="name">name</label>
+                  <label for="institute">Institute-ID *</label>
                   
-                    <input formControlName="name" type="text" class="form-control">
+                      <input formControlName="institute" placeholder="enter institute's id" class="form-control" type="text">
                   
                 </div>
               
@@ -87,9 +83,9 @@
   
               
                 <div class="form-group text-left">
-                  <label for="email">email</label>
+                  <label for="email">Student Email</label>
                   
-                    <input formControlName="email" type="text" class="form-control">
+                    <input formControlName="email" placeholder="enter student's email" type="text" class="form-control">
                   
                 </div>
               
@@ -120,9 +116,27 @@
           <div class="modal-body">
   
   
+            <div class="form-group text-left">
+              <label for="id">Student-ID</label>
+
+              
+                <input [ngModel]="id" formControlName="id" class="form-control" disabled="disabled">  
+              
+
+            </div>
+          
+            <div class="form-group text-left">
+              <label for="name">Name</label>
+
+              
+                <input [ngModel]="name"formControlName="name" type="text" class="form-control">
+              
+
+            </div>
+
             
               <div class="form-group text-left">
-                <label for="fatherName">fatherName</label>
+                <label for="fatherName">Father Name</label>
   
                 
                   <input [ngModel]="fatherName"formControlName="fatherName" type="text" class="form-control">
@@ -140,7 +154,7 @@
               </div>
             
               <div class="form-group text-left">
-                <label for="studentSecret">studentSecret</label>
+                <label for="studentSecret">Student Secret</label>
   
                 
                   <input [ngModel]="studentSecret"formControlName="studentSecret" type="text" class="form-control">
@@ -149,36 +163,20 @@
               </div>
             
               <div class="form-group text-left">
-                <label for="institute">institute</label>
+                <label for="institute">Institute-ID</label>
   
                 
                   
-                    <textarea [ngModel]="institute" formControlName="institute" class="form-control" rows="3"></textarea>
+                    <input [ngModel]="institute" formControlName="institute" class="form-control" type="text">
                   
                 
   
               </div>
             
-              <div class="form-group text-left">
-                <label for="id">id</label>
-  
-                
-                  <input [ngModel]="id" formControlName="id" class="form-control" disabled="disabled">  
-                
-  
-              </div>
+           
             
               <div class="form-group text-left">
-                <label for="name">name</label>
-  
-                
-                  <input [ngModel]="name"formControlName="name" type="text" class="form-control">
-                
-  
-              </div>
-            
-              <div class="form-group text-left">
-                <label for="email">email</label>
+                <label for="email">Student Email</label>
   
                 
                   <input [ngModel]="email"formControlName="email" type="text" class="form-control">
@@ -237,7 +235,7 @@
     
     <div class="row">
       <div class="col-md-9">
-          <h1 class="participant-title" id='participantName'>studentParticipant</h1>
+          <h1 class="participant-title" id='participantName'>Students</h1>
       </div>
       <div class="col-md-3">
         <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addParticipantModal">
@@ -246,7 +244,7 @@
                   <path fill-rule="evenodd" d="M5.5,4.5 L9.5,4.5 L10,4.5 L10,5.5 L9.5,5.5 L5.5,5.5 L5.5,9.5 L5.5,10 L4.5,10 L4.5,9.5 L4.5,5.5 L0.5,5.5 L0,5.5 L0,4.5 L0.5,4.5 L4.5,4.5 L4.5,0.5 L4.5,0 L5.5,0 L5.5,0.5 L5.5,4.5 Z"/>
                 </svg>
             </span>
-          Create Participant
+          Add Student
         </button>
       </div>
     </div>
@@ -257,19 +255,19 @@
           <thead class="thead">
             <tr class="thead-cols">
               
-                  <th class="info">fatherName</th>
+                  <th class="info">Student-ID</th>
+              
+                  <th class="info">Name</th>
+
+                  <th class="info">Father Name</th>
               
                   <th class="info">DOB</th>
               
-                  <th class="info">studentSecret</th>
+                  <th class="info">Student Secret</th>
               
-                  <th class="info">institute</th>
+                  <th class="info">Institute-ID</th>
               
-                  <th class="info">id</th>
-              
-                  <th class="info">name</th>
-              
-                  <th class="info">email</th>
+                  <th class="info">Student Email</th>
               
                 <th class="info-actions">Actions</th>
             </tr>
@@ -278,6 +276,10 @@
             <tr *ngFor="let participant of allParticipants">
   
               
+                  <td class="participant-properties">{{participant.id}}</td>
+              
+                  <td class="participant-properties">{{participant.name}}</td>
+
                   <td class="participant-properties">{{participant.fatherName}}</td>
               
                   <td class="participant-properties">{{participant.DOB}}</td>
@@ -285,10 +287,6 @@
                   <td class="participant-properties">{{participant.studentSecret}}</td>
               
                   <td class="participant-properties">{{participant.institute}}</td>
-              
-                  <td class="participant-properties">{{participant.id}}</td>
-              
-                  <td class="participant-properties">{{participant.name}}</td>
               
                   <td class="participant-properties">{{participant.email}}</td>
               

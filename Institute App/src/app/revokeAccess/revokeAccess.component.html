@@ -22,14 +22,11 @@
       <form [formGroup]="myForm">
         <div class="modal-body">
 
-
-          
-
             
               <div class="form-group text-left">
-                <label for="degree">degree</label>
+                <label for="degree">Degree-ID *</label>
                 
-                    <textarea formControlName="degree" class="form-control" rows="3"></textarea>
+                    <input formControlName="degree" placeholder="enter your degree id" class="form-control" type="text">
                 
               </div>
             
@@ -37,28 +34,22 @@
 
             
               <div class="form-group text-left">
-                <label for="employer">employer</label>
+                <label for="employer">Employer-ID *</label>
                 
-                    <textarea formControlName="employer" class="form-control" rows="3"></textarea>
+                    <input formControlName="employer" placeholder="enter employer id" class="form-control" type="text">
                 
               </div>
             
           
-
-            
               <div class="form-group text-left">
-                <label for="studentSecret">studentSecret</label>
+                <label for="studentSecret">Student Secret *</label>
                 
-                  <input formControlName="studentSecret" type="text" class="form-control">
+                  <input formControlName="studentSecret" placeholder="enter your student secret" type="text" class="form-control">
                 
               </div>
             
           
 
-            
-          
-
-            
           
 
         </div>
@@ -91,26 +82,21 @@
           <ul>
             
               
-                <li><span class="attribute"><b>degree</b></span></li>
+                <li><span class="attribute"><b>Degree-ID</b></span></li>
               
             
               
-                <li><span class="attribute"><b>employer</b></span></li>
+                <li><span class="attribute"><b>Employer-ID</b></span></li>
               
             
               
-                <li><span class="attribute"><b>studentSecret</b></span></li>
-              
-            
-              
-            
+                <li><span class="attribute"><b>Student Secret</b></span></li>
               
             
           </ul>
         </div>
       </div>
-      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">Invoke</button>
+      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">Revoke</button>
     </div>
   </div>
 </div>
-

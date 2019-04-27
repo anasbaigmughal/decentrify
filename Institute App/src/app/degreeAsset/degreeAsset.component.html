@@ -16,7 +16,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addAssetModalLabel">Create asset</h4>
+        <h4 class="modal-title" id="addAssetModalLabel">Add Degree</h4>
           <p class="modal-intro">Enter the required values below.</p>
       </div>
       <form [formGroup]="myForm">
@@ -27,19 +27,9 @@
 
             
               <div class="form-group text-left">
-                <label for="degreeId">degreeId</label>
+                <label for="degreeId">Degree-ID *</label>
                 
-                  <input formControlName="degreeId" type="text" class="form-control">
-                
-              </div>
-            
-          
-
-            
-              <div class="form-group text-left">
-                <label for="student">student</label>
-                
-                    <textarea formControlName="student" class="form-control" rows="3"></textarea>
+                  <input formControlName="degreeId" placeholder="enter student's degree id" type="text" class="form-control">
                 
               </div>
             
@@ -47,19 +37,9 @@
 
             
               <div class="form-group text-left">
-                <label for="institute">institute</label>
+                <label for="student">Student-ID *</label>
                 
-                    <textarea formControlName="institute" class="form-control" rows="3"></textarea>
-                
-              </div>
-            
-          
-
-            
-              <div class="form-group text-left">
-                <label for="degreeName">degreeName</label>
-                
-                  <input formControlName="degreeName" type="text" class="form-control">
+                    <input formControlName="student" placeholder="enter student's id" class="form-control" type="text">
                 
               </div>
             
@@ -67,19 +47,9 @@
 
             
               <div class="form-group text-left">
-                <label for="degreeDuration">degreeDuration</label>
+                <label for="institute">Institute-ID *</label>
                 
-                  <input formControlName="degreeDuration" type="text" class="form-control">
-                
-              </div>
-            
-          
-
-            
-              <div class="form-group text-left">
-                <label for="passingYear">passingYear</label>
-                
-                  <input formControlName="passingYear" type="text" class="form-control">
+                    <input formControlName="institute" placeholder="enter institute's id" class="form-control" type="text">
                 
               </div>
             
@@ -87,9 +57,9 @@
 
             
               <div class="form-group text-left">
-                <label for="cgpa">cgpa</label>
+                <label for="degreeName">Degree Name *</label>
                 
-                  <input formControlName="cgpa" type="number" step='any' class="form-control">
+                  <input formControlName="degreeName" placeholder="enter degree title" type="text" class="form-control">
                 
               </div>
             
@@ -97,9 +67,39 @@
 
             
               <div class="form-group text-left">
-                <label for="allowedViews">allowedViews</label>
+                <label for="degreeDuration">Duration (Years) *</label>
                 
-                  <input formControlName="allowedViews" type="number" class="form-control">
+                  <input formControlName="degreeDuration" placeholder="enter degree duration" type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="passingYear">Passing Year *</label>
+                
+                  <input formControlName="passingYear"  placeholder="enter passing year"type="text" class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="cgpa">CGPA *</label>
+                
+                  <input formControlName="cgpa" placeholder="enter cgpa of student"type="number" step='any' class="form-control">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="allowedViews">Allowed Views *</label>
+                
+                  <input formControlName="allowedViews" placeholder="ennter number of allowed views" type="number" class="form-control">
                 
               </div>
             
@@ -132,7 +132,7 @@
 
           
             <div class="form-group text-left">
-              <label for="degreeId">degreeId</label>
+              <label for="degreeId">Degree-ID</label>
               
               
                 <input [ngModel]="degreeId" formControlName="degreeId" class="form-control" disabled="disabled">  
@@ -141,7 +141,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="student">student</label>
+              <label for="student">Student-ID</label>
               
               
                 
@@ -152,7 +152,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="institute">institute</label>
+              <label for="institute">Institute-ID</label>
               
               
                 
@@ -163,7 +163,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="degreeName">degreeName</label>
+              <label for="degreeName">Degree Name</label>
               
               
                 <input [ngModel]="degreeName"formControlName="degreeName" type="text" class="form-control">
@@ -172,7 +172,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="degreeDuration">degreeDuration</label>
+              <label for="degreeDuration">Duration (Years)</label>
               
               
                 <input [ngModel]="degreeDuration"formControlName="degreeDuration" type="text" class="form-control">
@@ -181,7 +181,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="passingYear">passingYear</label>
+              <label for="passingYear">Passing Year</label>
               
               
                 <input [ngModel]="passingYear"formControlName="passingYear" type="text" class="form-control">
@@ -190,7 +190,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="cgpa">cgpa</label>
+              <label for="cgpa">CGPA</label>
               
               
                 <input [ngModel]="cgpa" formControlName="cgpa" type="number" step='any' class="form-control">
@@ -199,7 +199,7 @@
             </div>
           
             <div class="form-group text-left">
-              <label for="allowedViews">allowedViews</label>
+              <label for="allowedViews">Allowed Views</label>
               
               
                 <input [ngModel]="allowedViews" formControlName="allowedViews" type="number" class="form-control">
@@ -258,7 +258,7 @@
   
   <div class="row">
     <div class="col-md-9">
-        <h1 class="asset-title" id='assetName'>degreeAsset</h1>
+        <h1 class="asset-title" id='assetName'>Degrees</h1>
     </div>
     <div class="col-md-3">
       <button (click)="resetForm()" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addAssetModal">
@@ -267,7 +267,7 @@
                 <path fill-rule="evenodd" d="M5.5,4.5 L9.5,4.5 L10,4.5 L10,5.5 L9.5,5.5 L5.5,5.5 L5.5,9.5 L5.5,10 L4.5,10 L4.5,9.5 L4.5,5.5 L0.5,5.5 L0,5.5 L0,4.5 L0.5,4.5 L4.5,4.5 L4.5,0.5 L4.5,0 L5.5,0 L5.5,0.5 L5.5,4.5 Z"/>
               </svg>
           </span>
-        Create Asset
+        Add Degree
       </button>
     </div>
   </div>
@@ -278,21 +278,21 @@
         <thead class="thead">
           <tr class="thead-cols">
             
-                <th class="info">degreeId</th>
+                <th class="info">Degree-ID</th>
             
-                <th class="info">student</th>
+                <th class="info">Student-ID</th>
             
-                <th class="info">institute</th>
+                <th class="info">Institute-ID</th>
             
-                <th class="info">degreeName</th>
+                <th class="info">Degree Name</th>
             
-                <th class="info">degreeDuration</th>
+                <th class="info">Duration (Years)</th>
             
-                <th class="info">passingYear</th>
+                <th class="info">Passing Year</th>
             
-                <th class="info">cgpa</th>
+                <th class="info">CGPA</th>
             
-                <th class="info">allowedViews</th>
+                <th class="info">Allowed Views</th>
             
               <th class="info-actions">Actions</th>
           </tr>

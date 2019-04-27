@@ -103,8 +103,8 @@ export class revokeAccessComponent implements OnInit {
   addTransaction(form: any): Promise<any> {
     this.Transaction = {
       $class: 'org.decentrify.network.revokeAccess',
-      'degree': this.degree.value,
-      'employer': this.employer.value,
+      'degree': "resource:org.decentrify.network.degreeAsset#"+this.degree.value,
+      'employer': "resource:org.decentrify.network.employerParticipant#"+this.employer.value,
       'studentSecret': this.studentSecret.value,
       'transactionId': this.transactionId.value,
       'timestamp': this.timestamp.value

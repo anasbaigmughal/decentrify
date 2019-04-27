@@ -66,6 +66,26 @@ export class studentParticipantComponent implements OnInit {
       result.forEach(participant => {
         tempList.push(participant);
       });
+      
+
+      for(var p=0; p<tempList.length; p++)
+      {
+      var ins:string = tempList[p].institute.toString(); 
+        var resInstitute = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              resInstitute+=ins[j];
+              i++;
+            }
+          }
+          tempList[p].institute = resInstitute;
+      }
+    }
+
+
       this.allParticipants = tempList;
     })
     .catch((error) => {
@@ -109,7 +129,7 @@ export class studentParticipantComponent implements OnInit {
       'fatherName': this.fatherName.value,
       'DOB': this.DOB.value,
       'studentSecret': this.studentSecret.value,
-      'institute': this.institute.value,
+      'institute': "resource:org.decentrify.network.instituteParticipant#"+this.institute.value,
       'id': this.id.value,
       'name': this.name.value,
       'email': this.email.value
@@ -156,7 +176,7 @@ export class studentParticipantComponent implements OnInit {
       'fatherName': this.fatherName.value,
       'DOB': this.DOB.value,
       'studentSecret': this.studentSecret.value,
-      'institute': this.institute.value,
+      'institute': "resource:org.decentrify.network.instituteParticipant#"+this.institute.value,
       'name': this.name.value,
       'email': this.email.value
     };
@@ -237,7 +257,19 @@ export class studentParticipantComponent implements OnInit {
       }
 
       if (result.institute) {
-        formObject.institute = result.institute;
+        var ins:string = result.institute.toString(); 
+        var res = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              res+=ins[j];
+              i++;
+            }
+          }
+        }
+        formObject.institute = res;
       } else {
         formObject.institute = null;
       }

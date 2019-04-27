@@ -103,7 +103,7 @@ export class invokeAccessComponent implements OnInit {
   addTransaction(form: any): Promise<any> {
     this.Transaction = {
       $class: 'org.decentrify.network.invokeAccess',
-      'degree': this.degree.value,
+      'degree': "resource:org.decentrify.network.degreeAsset#"+this.degree.value,
       'allowedViews': this.allowedViews.value,
       'studentSecret': this.studentSecret.value,
       'transactionId': this.transactionId.value,

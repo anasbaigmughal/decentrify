@@ -67,6 +67,44 @@ export class degreeAssetComponent implements OnInit {
       result.forEach(asset => {
         tempList.push(asset);
       });
+/* code for form load conversion */
+/* code for form load conversion */
+/* code for form load conversion */
+/* code for form load conversion */
+
+
+      for(var p=0; p<tempList.length; p++)
+      {
+        var ins:string = tempList[p].student.toString(); 
+        var resStudent = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              resStudent+=ins[j];
+              i++;
+            }
+          }
+          tempList[p].student = resStudent;
+        }
+
+        var ins:string = tempList[p].institute.toString(); 
+        var resInstitute = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              resInstitute+=ins[j];
+              i++;
+            }
+          }
+          tempList[p].institute = resInstitute;
+      }
+    }
+
+
       this.allAssets = tempList;
     })
     .catch((error) => {
@@ -109,8 +147,8 @@ export class degreeAssetComponent implements OnInit {
     this.asset = {
       $class: 'org.decentrify.network.degreeAsset',
       'degreeId': this.degreeId.value,
-      'student': this.student.value,
-      'institute': this.institute.value,
+      'student': "resource:org.decentrify.network.studentParticipant#"+this.student.value,
+      'institute': "resource:org.decentrify.network.instituteParticipant#"+this.institute.value,
       'degreeName': this.degreeName.value,
       'degreeDuration': this.degreeDuration.value,
       'passingYear': this.passingYear.value,
@@ -158,8 +196,8 @@ export class degreeAssetComponent implements OnInit {
   updateAsset(form: any): Promise<any> {
     this.asset = {
       $class: 'org.decentrify.network.degreeAsset',
-      'student': this.student.value,
-      'institute': this.institute.value,
+      'student': "resource:org.decentrify.network.studentParticipant#"+this.student.value,
+      'institute': "resource:org.decentrify.network.instituteParticipant#"+this.institute.value,
       'degreeName': this.degreeName.value,
       'degreeDuration': this.degreeDuration.value,
       'passingYear': this.passingYear.value,
@@ -232,13 +270,37 @@ export class degreeAssetComponent implements OnInit {
       }
 
       if (result.student) {
-        formObject.student = result.student;
+        var ins:string = result.student.toString(); 
+        var res = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              res+=ins[j];
+              i++;
+            }
+          }
+        }
+        formObject.student = res;
       } else {
         formObject.student = null;
       }
 
       if (result.institute) {
-        formObject.institute = result.institute;
+        var ins:string = result.institute.toString(); 
+        var res = "";
+        for (var i=0; i<ins.length; i++) {
+          if(ins[i]=="#")
+          {
+            for (var j=i+1; j<ins.length; j++)
+            {
+              res+=ins[j];
+              i++;
+            }
+          }
+        }
+        formObject.institute = res;
       } else {
         formObject.institute = null;
       }

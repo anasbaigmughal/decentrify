@@ -21,45 +21,28 @@
       </div>
       <form [formGroup]="myForm">
         <div class="modal-body">
-
-
-          
-
             
               <div class="form-group text-left">
-                <label for="degree">degree</label>
+                <label for="degree">Degree-ID *</label>
                 
-                    <textarea formControlName="degree" class="form-control" rows="3"></textarea>
+                    <input formControlName="degree" placeholder="enter your degree id" type="text" class="form-control">
                 
               </div>
             
-          
+              <div class="form-group text-left">
+                <label for="allowedViews">Allowed Views *</label>
+                
+                  <input formControlName="allowedViews" placeholder="number of times employer could view" type="number" class="form-control">
+                
+              </div>
 
             
               <div class="form-group text-left">
-                <label for="allowedViews">allowedViews</label>
+                <label for="studentSecret">Student Secret *</label>
                 
-                  <input formControlName="allowedViews" type="number" class="form-control">
-                
-              </div>
-            
-          
-
-            
-              <div class="form-group text-left">
-                <label for="studentSecret">studentSecret</label>
-                
-                  <input formControlName="studentSecret" type="text" class="form-control">
+                  <input formControlName="studentSecret" placeholder="enter your student secret" type="text" class="form-control">
                 
               </div>
-            
-          
-
-            
-          
-
-            
-          
 
         </div>
         <div class="modal-footer">
@@ -78,7 +61,7 @@
 
   <div class="row">
     <div class="col-md-12">
-        <h1 class="transaction-title" id='transactionName'>invokeAccess</h1>
+        <h1 class="transaction-title" id='transactionName'>Invoke Employer Access</h1>
     </div>
   </div>
   <br>
@@ -91,15 +74,15 @@
           <ul>
             
               
-                <li><span class="attribute"><b>degree</b></span></li>
+                <li><span class="attribute"><b>Degree-ID</b></span></li>
               
             
               
-                <li><span class="attribute"><b>allowedViews</b></span></li>
+                <li><span class="attribute"><b>Allowed Views</b></span></li>
               
             
               
-                <li><span class="attribute"><b>studentSecret</b></span></li>
+                <li><span class="attribute"><b>Student Secret</b></span></li>
               
             
               
@@ -113,4 +96,3 @@
     </div>
   </div>
 </div>
-

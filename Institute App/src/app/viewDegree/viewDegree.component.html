@@ -16,7 +16,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="addTransactionModalLabel">Create Transaction</h4>
+        <h4 class="modal-title" id="addTransactionModalLabel">View Degree</h4>
         <p class="modal-intro">Enter the required values below.</p>
       </div>
       <form [formGroup]="myForm">
@@ -27,19 +27,9 @@
 
             
               <div class="form-group text-left">
-                <label for="degree">degree</label>
+                <label for="degree">Degree-ID *</label>
                 
-                    <textarea formControlName="degree" class="form-control" rows="3"></textarea>
-                
-              </div>
-            
-          
-
-            
-              <div class="form-group text-left">
-                <label for="employer">employer</label>
-                
-                    <textarea formControlName="employer" class="form-control" rows="3"></textarea>
+                    <input formControlName="degree" placeholder="enter student's degree id" class="form-control" type="text">
                 
               </div>
             
@@ -47,9 +37,19 @@
 
             
               <div class="form-group text-left">
-                <label for="employerSecret">employerSecret</label>
+                <label for="employer">Employer-ID *</label>
                 
-                  <input formControlName="employerSecret" type="text" class="form-control">
+                    <input formControlName="employer" placeholder="enter your employer id" class="form-control" type="text">
+                
+              </div>
+            
+          
+
+            
+              <div class="form-group text-left">
+                <label for="employerSecret">Employer Secret *</label>
+                
+                  <input formControlName="employerSecret" placeholder="enter your employer secret" type="text" class="form-control">
                 
               </div>
             
@@ -78,7 +78,7 @@
 
   <div class="row">
     <div class="col-md-12">
-        <h1 class="transaction-title" id='transactionName'>viewDegree</h1>
+        <h1 class="transaction-title" id='transactionName'>View Degree</h1>
     </div>
   </div>
   <br>
@@ -91,15 +91,15 @@
           <ul>
             
               
-                <li><span class="attribute"><b>degree</b></span></li>
+                <li><span class="attribute"><b>Degree-ID</b></span></li>
               
             
               
-                <li><span class="attribute"><b>employer</b></span></li>
+                <li><span class="attribute"><b>Employer-ID</b></span></li>
               
             
               
-                <li><span class="attribute"><b>employerSecret</b></span></li>
+                <li><span class="attribute"><b>Employer Secret</b></span></li>
               
             
               
@@ -109,8 +109,7 @@
           </ul>
         </div>
       </div>
-      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">Invoke</button>
+      <button (click)="resetForm();" type="button" class="btn btn-primary" data-toggle="modal" data-target="#addTransactionModal">View Degree</button>
     </div>
   </div>
 </div>
-

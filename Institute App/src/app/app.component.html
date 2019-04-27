@@ -14,15 +14,14 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <p class="network-name">decentrify@0.0.1.bna</p>
-        <p class="navbar-brand">decentrify-angular-app</p>
+        <p class="navbar-brand">Decentrify Institute Panel</p>
       </div>
       <ul class="nav navbar-nav">
         <li class="dropdown active">
             <a class="dropdown-toggle" data-toggle="dropdown">Assets</a>
             <ul class="dropdown-menu scrollable-menu">
               
-              <li><a [routerLink]="['/degreeAsset']">degreeAsset</a></li>
+              <li><a [routerLink]="['/degreeAsset']">Degrees</a></li>
               
             </ul>
         </li>
@@ -30,15 +29,15 @@
           <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>
           <ul class="dropdown-menu scrollable-menu">
             
-            <li><a [routerLink]="['/visitorParticipant']">visitorParticipant</a></li>
+       <!--     <li><a [routerLink]="['/visitorParticipant']">visitorParticipant</a></li>
             
             <li><a [routerLink]="['/networkRegulatorParticipant']">networkRegulatorParticipant</a></li>
             
-            <li><a [routerLink]="['/instituteParticipant']">instituteParticipant</a></li>
+            <li><a [routerLink]="['/instituteParticipant']">instituteParticipant</a></li>    -->
             
-            <li><a [routerLink]="['/employerParticipant']">employerParticipant</a></li>
+            <li><a [routerLink]="['/employerParticipant']">Employers</a></li>
             
-            <li><a [routerLink]="['/studentParticipant']">studentParticipant</a></li>
+            <li><a [routerLink]="['/studentParticipant']">Students</a></li>
             
           </ul>
       </li>
@@ -46,11 +45,11 @@
         <a class="dropdown-toggle" data-toggle="dropdown">Transactions</a>
         <ul class="dropdown-menu scrollable-menu">
           
-          <li><a [routerLink]="['/invokeAccess']">invokeAccess</a></li>
+          <li><a [routerLink]="['/invokeAccess']">Invoke Employer Access</a></li>
           
-          <li><a [routerLink]="['/viewDegree']">viewDegree</a></li>
+          <li><a [routerLink]="['/viewDegree']">View Degree</a></li>
           
-          <li><a [routerLink]="['/revokeAccess']">revokeAccess</a></li>
+          <li><a [routerLink]="['/revokeAccess']">RevokeEmployer Access</a></li>
           
         </ul>
     </li>
